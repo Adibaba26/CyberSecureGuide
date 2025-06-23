@@ -15,6 +15,8 @@ import {
   type CyberTrend,
   type InsertCyberTrend
 } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   // Cyber Tips
@@ -290,4 +292,34 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Database implementation
+export class DatabaseStorage implements IStorage {
+  async getCyberTips(): Promise<CyberTip[]> {
+    return await db.select().from(cyberTips);
+  }
+
+  async getQuizQuestions(): Promise<QuizQuestion[]> {
+    return await db.select().from(quizQuestions);
+  }
+
+  async getResources(): Promise<Resource[]> {
+    return await db.select().from(resources);
+  }
+
+  async saveQuizAttempt(insertAttempt: InsertQuizAttempt): Promise<QuizAttempt> {
+    const [attempt] = await db
+      .insert(quizAttempts)
+      .values(insertAttempt)
+      .returning();
+    return attempt;
+  }
+
+  async getCyberTrends(): Promise<CyberTrend[]> {
+    const trends = await db.select().from(cyberTrends);
+    return trends.sort((a, b) => 
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+    );
+  }
+}
+
+export const storage = new DatabaseStorage();

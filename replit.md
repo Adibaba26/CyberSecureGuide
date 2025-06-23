@@ -21,9 +21,9 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Development Server**: Vite middleware integration for seamless development experience
 
 ### Data Storage Solutions
-- **Primary Database**: PostgreSQL with Neon serverless database
+- **Primary Database**: PostgreSQL with Neon serverless database (now active)
 - **ORM**: Drizzle ORM for type-safe database operations
-- **Development Storage**: In-memory storage with pre-populated sample data
+- **Database Seeding**: Automated data population with sample content
 - **Schema**: Shared TypeScript schema definitions with Zod validation
 
 ## Key Components
@@ -93,6 +93,8 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Static Assets**: Client build output served from Express server
 
 ## Recent Changes
+- June 23, 2025: Migrated from in-memory storage to PostgreSQL database
+- June 23, 2025: Added automated database seeding with sample data
 - June 23, 2025: Added Cyber Trends section with latest security developments
 - June 23, 2025: Initial setup
 
