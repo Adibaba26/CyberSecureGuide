@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { Link } from "wouter";
-import { Home, Lightbulb, HelpCircle, Images, Book } from "lucide-react";
+import { Home, Lightbulb, HelpCircle, Images, TrendingUp } from "lucide-react";
 
 export default function BottomNavigation() {
   const [location] = useLocation();
@@ -16,7 +16,7 @@ export default function BottomNavigation() {
     { path: "/tips", icon: Lightbulb, label: "Tips" },
     { path: "/quiz", icon: HelpCircle, label: "Quiz" },
     { path: "/posters", icon: Images, label: "Posters" },
-    { path: "/resources", icon: Book, label: "Resources" },
+    { path: "/trends", icon: TrendingUp, label: "Trends" },
   ];
 
   return (

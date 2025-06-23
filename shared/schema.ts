@@ -35,6 +35,18 @@ export const resources = pgTable("resources", {
   color: text("color").notNull(),
 });
 
+export const cyberTrends = pgTable("cyber_trends", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  category: text("category").notNull(), // 'threat', 'technology', 'policy', 'awareness'
+  severity: text("severity").notNull(), // 'low', 'medium', 'high', 'critical'
+  publishedDate: text("published_date").notNull(),
+  source: text("source").notNull(),
+  icon: text("icon").notNull(),
+  color: text("color").notNull(),
+});
+
 export const insertCyberTipSchema = createInsertSchema(cyberTips).omit({
   id: true,
 });
@@ -51,6 +63,10 @@ export const insertResourceSchema = createInsertSchema(resources).omit({
   id: true,
 });
 
+export const insertCyberTrendSchema = createInsertSchema(cyberTrends).omit({
+  id: true,
+});
+
 export type CyberTip = typeof cyberTips.$inferSelect;
 export type InsertCyberTip = z.infer<typeof insertCyberTipSchema>;
 
@@ -62,3 +78,6 @@ export type InsertQuizAttempt = z.infer<typeof insertQuizAttemptSchema>;
 
 export type Resource = typeof resources.$inferSelect;
 export type InsertResource = z.infer<typeof insertResourceSchema>;
+
+export type CyberTrend = typeof cyberTrends.$inferSelect;
+export type InsertCyberTrend = z.infer<typeof insertCyberTrendSchema>;

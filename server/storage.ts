@@ -3,6 +3,7 @@ import {
   quizQuestions, 
   resources, 
   quizAttempts,
+  cyberTrends,
   type CyberTip, 
   type InsertCyberTip,
   type QuizQuestion,
@@ -10,7 +11,9 @@ import {
   type Resource,
   type InsertResource,
   type QuizAttempt,
-  type InsertQuizAttempt
+  type InsertQuizAttempt,
+  type CyberTrend,
+  type InsertCyberTrend
 } from "@shared/schema";
 
 export interface IStorage {
@@ -25,6 +28,9 @@ export interface IStorage {
   
   // Quiz Attempts
   saveQuizAttempt(attempt: InsertQuizAttempt): Promise<QuizAttempt>;
+  
+  // Cyber Trends
+  getCyberTrends(): Promise<CyberTrend[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -32,20 +38,24 @@ export class MemStorage implements IStorage {
   private quizQuestions: Map<number, QuizQuestion>;
   private resources: Map<number, Resource>;
   private quizAttempts: Map<number, QuizAttempt>;
+  private cyberTrends: Map<number, CyberTrend>;
   private currentTipId: number;
   private currentQuestionId: number;
   private currentResourceId: number;
   private currentAttemptId: number;
+  private currentTrendId: number;
 
   constructor() {
     this.cyberTips = new Map();
     this.quizQuestions = new Map();
     this.resources = new Map();
     this.quizAttempts = new Map();
+    this.cyberTrends = new Map();
     this.currentTipId = 1;
     this.currentQuestionId = 1;
     this.currentResourceId = 1;
     this.currentAttemptId = 1;
+    this.currentTrendId = 1;
     
     this.initializeData();
   }
@@ -183,6 +193,75 @@ export class MemStorage implements IStorage {
       const id = this.currentResourceId++;
       this.resources.set(id, { ...resource, id });
     });
+
+    // Initialize cyber trends
+    const trendsList: InsertCyberTrend[] = [
+      {
+        title: "AI-Powered Phishing Attacks",
+        description: "Cybercriminals are using artificial intelligence to create more sophisticated and personalized phishing emails that are harder to detect.",
+        category: "threat",
+        severity: "high",
+        publishedDate: "2025-01-15",
+        source: "CyberSecurity Daily",
+        icon: "fas fa-robot",
+        color: "red-500"
+      },
+      {
+        title: "Zero Trust Architecture Adoption",
+        description: "Organizations are rapidly implementing Zero Trust security models to protect against insider threats and data breaches.",
+        category: "technology",
+        severity: "medium",
+        publishedDate: "2025-01-10",
+        source: "Security Weekly",
+        icon: "fas fa-shield-alt",
+        color: "cyber-blue"
+      },
+      {
+        title: "Ransomware-as-a-Service Growth",
+        description: "The rise of RaaS platforms is making ransomware attacks more accessible to less technical criminals, increasing attack frequency.",
+        category: "threat",
+        severity: "critical",
+        publishedDate: "2025-01-08",
+        source: "Threat Intelligence Report",
+        icon: "fas fa-lock",
+        color: "red-600"
+      },
+      {
+        title: "Quantum Computing Security Risks",
+        description: "Experts warn that quantum computing advances could break current encryption methods, requiring new cryptographic standards.",
+        category: "technology",
+        severity: "high",
+        publishedDate: "2025-01-05",
+        source: "Tech Security Journal",
+        icon: "fas fa-atom",
+        color: "purple-500"
+      },
+      {
+        title: "Supply Chain Attack Prevention",
+        description: "New regulations require companies to implement stronger security measures throughout their software supply chains.",
+        category: "policy",
+        severity: "medium",
+        publishedDate: "2025-01-03",
+        source: "Government Cybersecurity",
+        icon: "fas fa-link",
+        color: "cyber-orange"
+      },
+      {
+        title: "Deepfake Detection Technology",
+        description: "Advanced AI tools are being developed to identify and combat the growing threat of deepfake content in cyber attacks.",
+        category: "technology",
+        severity: "medium",
+        publishedDate: "2024-12-28",
+        source: "AI Security Review",
+        icon: "fas fa-video",
+        color: "cyber-green"
+      }
+    ];
+
+    trendsList.forEach(trend => {
+      const id = this.currentTrendId++;
+      this.cyberTrends.set(id, { ...trend, id });
+    });
   }
 
   async getCyberTips(): Promise<CyberTip[]> {
@@ -202,6 +281,12 @@ export class MemStorage implements IStorage {
     const attempt: QuizAttempt = { ...insertAttempt, id };
     this.quizAttempts.set(id, attempt);
     return attempt;
+  }
+
+  async getCyberTrends(): Promise<CyberTrend[]> {
+    return Array.from(this.cyberTrends.values()).sort((a, b) => 
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+    );
   }
 }
 

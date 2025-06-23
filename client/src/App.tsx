@@ -9,6 +9,7 @@ import Tips from "@/pages/tips";
 import Quiz from "@/pages/quiz";
 import Posters from "@/pages/posters";
 import Resources from "@/pages/resources";
+import Trends from "@/pages/trends";
 import MobileLayout from "@/components/layout/mobile-layout";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/quiz" component={Quiz} />
         <Route path="/posters" component={Posters} />
         <Route path="/resources" component={Resources} />
+        <Route path="/trends" component={Trends} />
         <Route component={NotFound} />
       </Switch>
     </MobileLayout>

@@ -33,6 +33,7 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **quiz_questions**: Contains quiz questions with multiple choice options and explanations
 - **quiz_attempts**: Tracks user quiz performance and completion data
 - **resources**: Educational resources including videos, websites, PDFs, and courses
+- **cyber_trends**: Latest cybersecurity news and developments with severity levels
 
 ### Mobile-Optimized Interface
 - **Bottom Navigation**: Touch-friendly navigation bar with 5 main sections
@@ -45,7 +46,8 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 2. **Interactive Quiz**: Multiple-choice cybersecurity knowledge assessment
 3. **Educational Posters**: Visual safety reminders with high-quality images
 4. **Learning Resources**: Curated collection of external educational materials
-5. **Progress Tracking**: Quiz attempt history and performance analytics
+5. **Cyber Trends**: Latest cybersecurity developments and emerging threats
+6. **Progress Tracking**: Quiz attempt history and performance analytics
 
 ## Data Flow
 
@@ -90,8 +92,9 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Database**: Requires PostgreSQL database URL environment variable
 - **Static Assets**: Client build output served from Express server
 
-## Changelog
-- June 23, 2025. Initial setup
+## Recent Changes
+- June 23, 2025: Added Cyber Trends section with latest security developments
+- June 23, 2025: Initial setup
 
 ## User Preferences
 

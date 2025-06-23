@@ -50,6 +50,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get cyber trends
+  app.get("/api/cyber-trends", async (req, res) => {
+    try {
+      const trends = await storage.getCyberTrends();
+      res.json(trends);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch cyber trends" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

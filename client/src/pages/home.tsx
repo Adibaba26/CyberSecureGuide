@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Shield, Lightbulb, HelpCircle, Images, Book } from "lucide-react";
+import { Shield, Lightbulb, HelpCircle, Images, Book, TrendingUp } from "lucide-react";
 
 export default function Home() {
   return (
@@ -67,6 +67,21 @@ export default function Home() {
               <div>
                 <h3 className="font-semibold text-gray-800">Resources</h3>
                 <p className="text-sm text-gray-500">External learning materials</p>
+              </div>
+              <i className="fas fa-chevron-right text-gray-400 ml-auto"></i>
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/trends">
+          <div className="nav-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 cursor-pointer touch-feedback">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-indigo-500 bg-opacity-20 rounded-lg flex items-center justify-center">
+                <TrendingUp className="text-indigo-500 h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800">Cyber Trends</h3>
+                <p className="text-sm text-gray-500">Latest security developments</p>
               </div>
               <i className="fas fa-chevron-right text-gray-400 ml-auto"></i>
             </div>
