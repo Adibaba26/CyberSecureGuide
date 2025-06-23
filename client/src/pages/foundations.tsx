@@ -3,14 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, Heart, Search, ExternalLink, Copy, Check } from "lucide-react";
 import { Link } from "wouter";
 import type { Foundation } from "@shared/schema";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Foundations() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedFoundation, setSelectedFoundation] = useState<Foundation | null>(null);
+  const [selectedFoundationForModal, setSelectedFoundationForModal] = useState<Foundation | null>(null);
   const [copiedText, setCopiedText] = useState<string>("");
   const { toast } = useToast();
 
@@ -40,104 +39,6 @@ export default function Foundations() {
       });
     }
   };
-
-  const DonationModal = ({ foundation }: { foundation: Foundation }) => (
-    <DialogContent className="sm:max-w-md">
-      <DialogHeader>
-        <DialogTitle className="flex items-center space-x-2">
-          <Heart className="h-5 w-5 text-red-500" />
-          <span>Donate to {foundation.name}</span>
-        </DialogTitle>
-      </DialogHeader>
-      <div className="space-y-4">
-        <div className="text-sm text-gray-600">
-          <p className="font-medium mb-2">Mission:</p>
-          <p>{foundation.mission}</p>
-        </div>
-        
-        <div className="space-y-3">
-          {foundation.easypaisa && (
-            <div className="p-3 bg-green-50 rounded-lg border border-green-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-medium text-green-800">EasyPaisa</p>
-                  <p className="text-green-600">{foundation.easypaisa}</p>
-                </div>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => copyToClipboard(foundation.easypaisa!, "EasyPaisa number")}
-                  className="text-green-600 border-green-300 hover:bg-green-100"
-                >
-                  {copiedText === foundation.easypaisa ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {foundation.jazzcash && (
-            <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-medium text-purple-800">JazzCash</p>
-                  <p className="text-purple-600">{foundation.jazzcash}</p>
-                </div>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => copyToClipboard(foundation.jazzcash!, "JazzCash number")}
-                  className="text-purple-600 border-purple-300 hover:bg-purple-100"
-                >
-                  {copiedText === foundation.jazzcash ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {foundation.bankAccount && (
-            <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
-              <div className="space-y-2">
-                <p className="font-medium text-blue-800">Bank Transfer</p>
-                <div className="text-sm text-blue-600 space-y-1">
-                  <div className="flex justify-between items-center">
-                    <span>Bank: {foundation.bankName}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Account: {foundation.accountTitle}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Number: {foundation.bankAccount}</span>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => copyToClipboard(foundation.bankAccount!, "Account number")}
-                      className="text-blue-600 border-blue-300 hover:bg-blue-100"
-                    >
-                      {copiedText === foundation.bankAccount ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {foundation.website && (
-          <div className="pt-3 border-t">
-            <a
-              href={foundation.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors"
-            >
-              <ExternalLink className="h-4 w-4" />
-              <span>Visit Official Website</span>
-            </a>
-          </div>
-        )}
-      </div>
-    </DialogContent>
-  );
 
   if (isLoading) {
     return (
@@ -225,15 +126,13 @@ export default function Foundations() {
                 </div>
                 <p className="text-sm text-gray-600 mb-2 font-medium">{foundation.mission}</p>
                 <p className="text-sm text-gray-500 mb-4 leading-relaxed">{foundation.description}</p>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="bg-red-500 hover:bg-red-600 text-white">
-                      <Heart className="h-4 w-4 mr-2" />
-                      Donate Now
-                    </Button>
-                  </DialogTrigger>
-                  <DonationModal foundation={foundation} />
-                </Dialog>
+                <Button 
+                  onClick={() => setSelectedFoundationForModal(foundation)}
+                  className="bg-red-500 hover:bg-red-600 text-white"
+                >
+                  <Heart className="h-4 w-4 mr-2" />
+                  Donate Now
+                </Button>
               </div>
             </div>
           </div>
@@ -244,6 +143,13 @@ export default function Foundations() {
         <div className="text-center py-8">
           <p className="text-gray-500">No foundations found matching your search.</p>
         </div>
+      )}
+
+      {selectedFoundationForModal && (
+        <DonationModal 
+          foundation={selectedFoundationForModal} 
+          onClose={() => setSelectedFoundationForModal(null)}
+        />
       )}
     </div>
   );

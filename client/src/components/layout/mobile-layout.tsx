@@ -1,14 +1,23 @@
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import BottomNavigation from "./bottom-navigation";
 import DesktopSidebar from "./desktop-sidebar";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MobileLayoutProps {
   children: ReactNode;
 }
 
 export default function MobileLayout({ children }: MobileLayoutProps) {
-  const isMobile = useIsMobile();
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   if (!isMobile) {
     return (
