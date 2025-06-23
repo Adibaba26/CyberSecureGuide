@@ -100,6 +100,8 @@ SecureLearn is a mobile-first educational platform designed to teach cybersecuri
 - **Static Assets**: Client build output served from Express server
 
 ## Recent Changes
+- June 23, 2025: Added real contact information (yohooyour@gmail.com, +923345284039)
+- June 23, 2025: Prepared deployment instructions for free hosting platforms
 - June 23, 2025: Rebranded application from CyberAware to SecureLearn
 - June 23, 2025: Added splash screen animation with logo on app load
 - June 23, 2025: Implemented logo shrink animation from fullscreen to header position
