@@ -1,6 +1,7 @@
 import { useLocation } from "wouter";
 import { Link } from "wouter";
 import { Home, Lightbulb, HelpCircle, Images, TrendingUp, Heart, Info, Phone } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function DesktopSidebar() {
   const [location] = useLocation();
@@ -24,14 +25,17 @@ export default function DesktopSidebar() {
 
   return (
     <div className="desktop-sidebar">
-      <div className="flex items-center space-x-3 mb-8">
-        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-          <i className="fas fa-shield-alt text-white text-lg"></i>
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+            <i className="fas fa-shield-alt text-white text-lg"></i>
+          </div>
+          <div>
+            <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">CyberAware</h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Education Platform</p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-xl font-bold text-gray-800">CyberAware</h1>
-          <p className="text-sm text-gray-500">Education Platform</p>
-        </div>
+        <ThemeToggle />
       </div>
 
       <nav className="space-y-2">
@@ -39,8 +43,8 @@ export default function DesktopSidebar() {
           <Link key={path} href={path}>
             <div className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
               isActive(path) 
-                ? "bg-blue-50 text-blue-600 border-l-4 border-blue-600" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+                ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-l-4 border-blue-600 dark:border-blue-400" 
+                : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-100"
             }`}>
               <Icon className="h-5 w-5" />
               <span className="font-medium">{label}</span>

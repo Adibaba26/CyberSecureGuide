@@ -1,6 +1,7 @@
 import { ReactNode, useState, useEffect } from "react";
 import BottomNavigation from "./bottom-navigation";
 import DesktopSidebar from "./desktop-sidebar";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface MobileLayoutProps {
   children: ReactNode;
@@ -48,7 +49,10 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       <div className="app-header text-white p-4 pb-6">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-bold">CyberAware</h1>
-          <i className="fas fa-shield-alt text-2xl"></i>
+          <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            <i className="fas fa-shield-alt text-2xl"></i>
+          </div>
         </div>
       </div>
 

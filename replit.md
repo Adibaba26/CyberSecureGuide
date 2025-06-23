@@ -100,6 +100,9 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Static Assets**: Client build output served from Express server
 
 ## Recent Changes
+- June 23, 2025: Added light/dark mode toggle with system preference detection
+- June 23, 2025: Implemented theme persistence using localStorage
+- June 23, 2025: Updated UI components to support dark mode styling
 - June 23, 2025: Updated foundations with authentic donation information from user
 - June 23, 2025: Added real contact numbers and bank details for Pakistani education NGOs
 - June 23, 2025: Added Education Foundations section with verified Pakistani NGOs
