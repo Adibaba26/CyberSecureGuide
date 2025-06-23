@@ -100,6 +100,8 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Static Assets**: Client build output served from Express server
 
 ## Recent Changes
+- June 23, 2025: Updated foundations with authentic donation information from user
+- June 23, 2025: Added real contact numbers and bank details for Pakistani education NGOs
 - June 23, 2025: Added Education Foundations section with verified Pakistani NGOs
 - June 23, 2025: Added donation guide and contact system for user inquiries
 - June 23, 2025: Implemented responsive design for both mobile and desktop users

@@ -63,13 +63,13 @@ export default function Foundations() {
               <div className="p-3 bg-green-50 rounded-lg border border-green-200">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-green-800">EasyPaisa</p>
+                    <p className="font-medium text-green-800">Call to Donate</p>
                     <p className="text-green-600">{foundation.easypaisa}</p>
                   </div>
                   <Button
                     size="sm"
                     variant="outline"
-                    onClick={() => copyToClipboard(foundation.easypaisa!, "EasyPaisa number")}
+                    onClick={() => copyToClipboard(foundation.easypaisa!, "Phone number")}
                     className="text-green-600 border-green-300 hover:bg-green-100"
                   >
                     {copiedText === foundation.easypaisa ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -78,17 +78,17 @@ export default function Foundations() {
               </div>
             )}
 
-            {foundation.jazzcash && (
+            {foundation.jazzcash && foundation.jazzcash !== foundation.easypaisa && (
               <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-purple-800">JazzCash</p>
+                    <p className="font-medium text-purple-800">Helpline</p>
                     <p className="text-purple-600">{foundation.jazzcash}</p>
                   </div>
                   <Button
                     size="sm"
                     variant="outline"
-                    onClick={() => copyToClipboard(foundation.jazzcash!, "JazzCash number")}
+                    onClick={() => copyToClipboard(foundation.jazzcash!, "Helpline number")}
                     className="text-purple-600 border-purple-300 hover:bg-purple-100"
                   >
                     {copiedText === foundation.jazzcash ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -109,7 +109,7 @@ export default function Foundations() {
                       <span>Account: {foundation.accountTitle}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Number: {foundation.bankAccount}</span>
+                      <span>A/C: {foundation.bankAccount}</span>
                       <Button
                         size="sm"
                         variant="outline"
@@ -118,6 +118,9 @@ export default function Foundations() {
                       >
                         {copiedText === foundation.bankAccount ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                       </Button>
+                    </div>
+                    <div className="text-xs text-blue-500 mt-1">
+                      IBAN: PK{foundation.bankName?.includes('Meezan') ? '40MEZN0002010100643642' : '08UMBL0850300017087201'}
                     </div>
                   </div>
                 </div>
