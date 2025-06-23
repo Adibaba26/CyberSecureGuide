@@ -25,7 +25,7 @@ export default function BottomNavigation() {
         {navItems.map(({ path, icon: Icon, label }) => (
           <Link key={path} href={path}>
             <button className={`flex flex-col items-center py-2 px-3 touch-feedback ${
-              isActive(path) ? "text-blue-500" : "text-gray-400"
+              isActive(path) ? "text-blue-500" : "text-muted-foreground"
             }`}>
               <Icon className="h-5 w-5 mb-1" />
               <span className="text-xs font-medium">{label}</span>

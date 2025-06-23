@@ -53,9 +53,9 @@ export default function DesktopSidebar() {
         ))}
       </nav>
 
-      <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
-        <h3 className="font-semibold text-blue-800 mb-2">Support Education</h3>
-        <p className="text-sm text-blue-700 mb-3">
+      <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+        <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">Support Education</h3>
+        <p className="text-sm text-blue-700 dark:text-blue-400 mb-3">
           Help provide quality education to underprivileged children in Pakistan.
         </p>
         <Link href="/foundations">

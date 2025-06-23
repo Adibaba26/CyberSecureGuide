@@ -42,19 +42,19 @@ export default function Foundations() {
 
   const DonationModal = ({ foundation, onClose }: { foundation: Foundation; onClose: () => void }) => (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg max-w-md w-full p-6">
+      <div className="bg-card rounded-lg max-w-md w-full p-6 border border-border">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
             <Heart className="h-5 w-5 text-red-500" />
-            <span className="font-semibold">Donate to {foundation.name}</span>
+            <span className="font-semibold text-card-foreground">Donate to {foundation.name}</span>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
             ✕
           </button>
         </div>
         <div className="space-y-4">
-          <div className="text-sm text-gray-600">
-            <p className="font-medium mb-2">Mission:</p>
+          <div className="text-sm text-muted-foreground">
+            <p className="font-medium mb-2 text-card-foreground">Mission:</p>
             <p>{foundation.mission}</p>
           </div>
           

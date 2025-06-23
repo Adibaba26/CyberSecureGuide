@@ -103,6 +103,10 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.dark .mobile-container {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Desktop responsive layout */
 @media (min-width: 768px) {
   .mobile-container {
@@ -155,6 +159,7 @@
 /* Navigation animations */
 .nav-card {
   transition: all 0.2s ease-in-out;
+  @apply bg-card border-border text-card-foreground;
 }
 
 .nav-card:hover {

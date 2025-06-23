@@ -39,11 +39,11 @@ export default function Tips() {
           <Link href="/" className="mr-4 p-2 hover:bg-gray-100 rounded-lg touch-feedback">
             <ArrowLeft className="h-5 w-5 text-gray-600" />
           </Link>
-          <h2 className="text-xl font-bold text-gray-800">Cyber Safety Tips</h2>
+          <h2 className="text-xl font-bold text-foreground">Cyber Safety Tips</h2>
         </div>
         <div className="space-y-4">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="bg-white rounded-xl p-5 shadow-md border border-gray-100 animate-pulse">
+            <div key={i} className="bg-card rounded-xl p-5 shadow-md border border-border animate-pulse">
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
                 <div className="flex-1">
@@ -69,14 +69,14 @@ export default function Tips() {
 
       <div className="space-y-4">
         {tips?.map((tip) => (
-          <div key={tip.id} className="bg-white rounded-xl p-5 shadow-md border border-gray-100">
+          <div key={tip.id} className="bg-card rounded-xl p-5 shadow-md border border-border">
             <div className="flex items-start space-x-3">
               <div className={`w-8 h-8 ${getBgColorClass(tip.color)} bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1`}>
                 <i className={`${tip.icon} ${getIconColorClass(tip.color)} text-sm`}></i>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-800 mb-2">{tip.title}</h3>
-                <p className="text-gray-600 text-sm">{tip.description}</p>
+                <h3 className="font-semibold text-card-foreground mb-2">{tip.title}</h3>
+                <p className="text-muted-foreground text-sm">{tip.description}</p>
               </div>
             </div>
           </div>
