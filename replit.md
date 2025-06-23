@@ -34,12 +34,16 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **quiz_attempts**: Tracks user quiz performance and completion data
 - **resources**: Educational resources including videos, websites, PDFs, and courses
 - **cyber_trends**: Latest cybersecurity news and developments with severity levels
+- **foundations**: Pakistani education NGOs with donation methods and contact information
+- **contact_submissions**: User messages and inquiries submitted through the contact form
 
-### Mobile-Optimized Interface
-- **Bottom Navigation**: Touch-friendly navigation bar with 5 main sections
-- **Responsive Design**: Mobile-first approach with iPhone-style UI mockup
+### Responsive Interface Design
+- **Mobile-First**: Touch-friendly navigation with bottom navigation bar
+- **Desktop Layout**: Sidebar navigation with larger content areas for PC users
+- **Cross-Platform**: Works seamlessly on mobile devices, tablets, and desktop computers
+- **Progressive Web App**: Installable on devices with native app-like experience
 - **Touch Interactions**: Optimized touch targets and feedback animations
-- **Status Bar Simulation**: Native mobile app appearance
+- **Status Bar Simulation**: Native mobile app appearance on mobile devices
 
 ### Core Features
 1. **Cyber Tips Section**: Displays essential security practices with visual icons
@@ -47,7 +51,10 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 3. **Educational Posters**: Visual safety reminders with high-quality images
 4. **Learning Resources**: Curated collection of external educational materials
 5. **Cyber Trends**: Latest cybersecurity developments and emerging threats
-6. **Progress Tracking**: Quiz attempt history and performance analytics
+6. **Education Foundations**: Directory of verified Pakistani education NGOs with donation information
+7. **Donation Guide**: Step-by-step instructions for supporting educational causes
+8. **Contact System**: Message submission and helpline information
+9. **Progress Tracking**: Quiz attempt history and performance analytics
 
 ## Data Flow
 
@@ -93,6 +100,10 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Static Assets**: Client build output served from Express server
 
 ## Recent Changes
+- June 23, 2025: Added Education Foundations section with verified Pakistani NGOs
+- June 23, 2025: Added donation guide and contact system for user inquiries
+- June 23, 2025: Implemented responsive design for both mobile and desktop users
+- June 23, 2025: Added copy-to-clipboard functionality for donation details
 - June 23, 2025: Migrated from in-memory storage to PostgreSQL database
 - June 23, 2025: Added automated database seeding with sample data
 - June 23, 2025: Added Cyber Trends section with latest security developments

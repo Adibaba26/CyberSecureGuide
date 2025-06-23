@@ -10,6 +10,9 @@ import Quiz from "@/pages/quiz";
 import Posters from "@/pages/posters";
 import Resources from "@/pages/resources";
 import Trends from "@/pages/trends";
+import Foundations from "@/pages/foundations";
+import DonationInfo from "@/pages/donation-info";
+import Contact from "@/pages/contact";
 import MobileLayout from "@/components/layout/mobile-layout";
 
 function Router() {
@@ -22,6 +25,9 @@ function Router() {
         <Route path="/posters" component={Posters} />
         <Route path="/resources" component={Resources} />
         <Route path="/trends" component={Trends} />
+        <Route path="/foundations" component={Foundations} />
+        <Route path="/donation-info" component={DonationInfo} />
+        <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </MobileLayout>

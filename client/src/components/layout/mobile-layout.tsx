@@ -1,11 +1,28 @@
 import { ReactNode } from "react";
 import BottomNavigation from "./bottom-navigation";
+import DesktopSidebar from "./desktop-sidebar";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MobileLayoutProps {
   children: ReactNode;
 }
 
 export default function MobileLayout({ children }: MobileLayoutProps) {
+  const isMobile = useIsMobile();
+
+  if (!isMobile) {
+    return (
+      <div className="mobile-container">
+        <div className="desktop-layout">
+          <DesktopSidebar />
+          <div className="desktop-content">
+            {children}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mobile-container">
       {/* Status Bar Mockup */}

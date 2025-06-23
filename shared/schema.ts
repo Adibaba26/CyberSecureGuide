@@ -47,6 +47,30 @@ export const cyberTrends = pgTable("cyber_trends", {
   color: text("color").notNull(),
 });
 
+export const foundations = pgTable("foundations", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  mission: text("mission").notNull(),
+  description: text("description").notNull(),
+  logo: text("logo").notNull(),
+  website: text("website"),
+  easypaisa: text("easypaisa"),
+  jazzcash: text("jazzcash"),
+  bankAccount: text("bank_account"),
+  bankName: text("bank_name"),
+  accountTitle: text("account_title"),
+  color: text("color").notNull(),
+  featured: boolean("featured").default(false),
+});
+
+export const contactSubmissions = pgTable("contact_submissions", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  message: text("message").notNull(),
+  submittedAt: text("submitted_at").notNull(),
+});
+
 export const insertCyberTipSchema = createInsertSchema(cyberTips).omit({
   id: true,
 });
@@ -67,6 +91,14 @@ export const insertCyberTrendSchema = createInsertSchema(cyberTrends).omit({
   id: true,
 });
 
+export const insertFoundationSchema = createInsertSchema(foundations).omit({
+  id: true,
+});
+
+export const insertContactSubmissionSchema = createInsertSchema(contactSubmissions).omit({
+  id: true,
+});
+
 export type CyberTip = typeof cyberTips.$inferSelect;
 export type InsertCyberTip = z.infer<typeof insertCyberTipSchema>;
 
@@ -81,3 +113,9 @@ export type InsertResource = z.infer<typeof insertResourceSchema>;
 
 export type CyberTrend = typeof cyberTrends.$inferSelect;
 export type InsertCyberTrend = z.infer<typeof insertCyberTrendSchema>;
+
+export type Foundation = typeof foundations.$inferSelect;
+export type InsertFoundation = z.infer<typeof insertFoundationSchema>;
+
+export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;

@@ -4,6 +4,8 @@ import {
   resources, 
   quizAttempts,
   cyberTrends,
+  foundations,
+  contactSubmissions,
   type CyberTip, 
   type InsertCyberTip,
   type QuizQuestion,
@@ -13,7 +15,11 @@ import {
   type QuizAttempt,
   type InsertQuizAttempt,
   type CyberTrend,
-  type InsertCyberTrend
+  type InsertCyberTrend,
+  type Foundation,
+  type InsertFoundation,
+  type ContactSubmission,
+  type InsertContactSubmission
 } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
@@ -33,6 +39,12 @@ export interface IStorage {
   
   // Cyber Trends
   getCyberTrends(): Promise<CyberTrend[]>;
+  
+  // Foundations
+  getFoundations(): Promise<Foundation[]>;
+  
+  // Contact Submissions
+  saveContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
 }
 
 export class MemStorage implements IStorage {
@@ -319,6 +331,19 @@ export class DatabaseStorage implements IStorage {
     return trends.sort((a, b) => 
       new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
     );
+  }
+
+  async getFoundations(): Promise<Foundation[]> {
+    const foundationList = await db.select().from(foundations);
+    return foundationList.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+  }
+
+  async saveContactSubmission(insertSubmission: InsertContactSubmission): Promise<ContactSubmission> {
+    const [submission] = await db
+      .insert(contactSubmissions)
+      .values(insertSubmission)
+      .returning();
+    return submission;
   }
 }
 

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Shield, Lightbulb, HelpCircle, Images, Book, TrendingUp } from "lucide-react";
+import { Shield, Lightbulb, HelpCircle, Images, Book, TrendingUp, Heart, Info, Phone } from "lucide-react";
 
 export default function Home() {
   return (
@@ -87,6 +87,47 @@ export default function Home() {
             </div>
           </div>
         </Link>
+
+        <Link href="/foundations">
+          <div className="nav-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 cursor-pointer touch-feedback">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-red-500 bg-opacity-20 rounded-lg flex items-center justify-center">
+                <Heart className="text-red-500 h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800">Education Foundations</h3>
+                <p className="text-sm text-gray-500">Support Pakistani NGOs</p>
+              </div>
+              <i className="fas fa-chevron-right text-gray-400 ml-auto"></i>
+            </div>
+          </div>
+        </Link>
+
+        <div className="grid grid-cols-2 gap-4">
+          <Link href="/donation-info">
+            <div className="nav-card bg-white rounded-xl p-4 shadow-lg border border-gray-100 cursor-pointer touch-feedback">
+              <div className="text-center">
+                <div className="w-10 h-10 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <Info className="text-blue-500 h-5 w-5" />
+                </div>
+                <h3 className="font-semibold text-gray-800 text-sm">Donation Guide</h3>
+                <p className="text-xs text-gray-500">How to donate</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/contact">
+            <div className="nav-card bg-white rounded-xl p-4 shadow-lg border border-gray-100 cursor-pointer touch-feedback">
+              <div className="text-center">
+                <div className="w-10 h-10 bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <Phone className="text-green-500 h-5 w-5" />
+                </div>
+                <h3 className="font-semibold text-gray-800 text-sm">Contact</h3>
+                <p className="text-xs text-gray-500">Get in touch</p>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );
