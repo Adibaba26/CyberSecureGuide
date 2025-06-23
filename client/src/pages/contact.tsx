@@ -102,7 +102,7 @@ export default function Contact() {
         <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 mb-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Get in Touch</h3>
           <p className="text-gray-600 mb-6">
-            Have questions about CyberAware, want to suggest a foundation, or need help with donations? 
+            Have questions about SecureLearn, want to suggest a foundation, or need help with donations? 
             We'd love to hear from you!
           </p>
 
@@ -174,7 +174,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-800">Email Us</h4>
-                <p className="text-sm text-gray-600">contact@cyberaware.edu.pk</p>
+                <p className="text-sm text-gray-600">yohooyour@gmail.com</p>
               </div>
             </div>
             <p className="text-sm text-gray-500">
@@ -189,7 +189,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-800">Call Us</h4>
-                <p className="text-sm text-gray-600">+92-XXX-XXXXXXX</p>
+                <p className="text-sm text-gray-600">+923345284039</p>
               </div>
             </div>
             <p className="text-sm text-gray-500">
