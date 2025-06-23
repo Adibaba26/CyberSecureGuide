@@ -1,0 +1,24 @@
+{
+  "name": "CyberAware - Cybersecurity Education",
+  "short_name": "CyberAware",
+  "description": "Learn to stay safe online with interactive cybersecurity education for students",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563EB",
+  "orientation": "portrait-primary",
+  "categories": ["education", "security"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMyNTYzRUIiLz4KPHBhdGggZD0iTTk2IDY0QzEwNC44IDY0IDExMiA3MS4yIDExMiA4MEMxMTIgODguOCAxMDQuOCA5NiA5NiA5NkM4Ny4yIDk2IDgwIDg4LjggODAgODBDODAgNzEuMiA4Ny4yIDY0IDk2IDY0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTk2IDEwNEMxMTMuNjczIDEwNCAxMjggMTE4LjMyNyAxMjggMTM2VjE0NEg2NFYxMzZDNjQgMTE4LjMyNyA3OC4zMjcgMTA0IDk2IDEwNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OCAzMkgxNDRDMTUyLjgzNyAzMiAxNjAgMzkuMTYzIDE2MCA0OFYxNDRDMTYwIDE1Mi44MzcgMTUyLjgzNyAxNjAgMTQ0IDE2MEg0OEMzOS4xNjMgMTYwIDMyIDE1Mi44MzcgMzIgMTQ0VjQ4QzMyIDM5LjE2MyAzOS4xNjMgMzIgNDggMzJaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMyNTYzRUIiLz4KPHBhdGggZD0iTTI1NiAxNzBDMjgxLjQwNSAxNzAgMzAyIDEwNS40MDUgMzAyIDIxNEMzMDIgMjM5LjQwNSAyODEuNDA1IDI1NiAyNTYgMjU2QzIzMC41OTUgMjU2IDIxNCAyMzkuNDA1IDIxNCAyMTRDMjE0IDE4OC41OTUgMjMwLjU5NSAxNzAgMjU2IDE3MFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNTYgMjc4QzMwMi43ODQgMjc4IDM0MCAzMTUuMjE2IDM0MCAzNjJWMzg0SDE3MlYzNjJDMTcyIDMxNS4yMTYgMjA5LjIxNiAyNzggMjU2IDI3OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMjggODVIMzg0QzQwNi4wOTEgODUgNDI0IDEwMi45MDkgNDI0IDEyNVYzODRDNDI0IDQwNi4wOTEgNDA2LjA5MSA0MjQgMzg0IDQyNEgxMjhDMTA1LjkwOSA0MjQgODggNDA2LjA5MSA4OCAzODRWMTI1Qzg4IDEwMi45MDkgMTA1LjkwOSA4NSAxMjggODVaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEwIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

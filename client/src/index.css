@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(213, 94%, 68%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom cyber colors */
+  --cyber-blue: hsl(213, 94%, 68%);
+  --cyber-green: hsl(158, 64%, 52%);
+  --cyber-orange: hsl(43, 96%, 56%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(213, 94%, 68%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-slate-50 text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .cyber-blue {
+    color: var(--cyber-blue);
+  }
+  
+  .bg-cyber-blue {
+    background-color: var(--cyber-blue);
+  }
+  
+  .cyber-green {
+    color: var(--cyber-green);
+  }
+  
+  .bg-cyber-green {
+    background-color: var(--cyber-green);
+  }
+  
+  .cyber-orange {
+    color: var(--cyber-orange);
+  }
+  
+  .bg-cyber-orange {
+    background-color: var(--cyber-orange);
+  }
+  
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile-first responsive design */
+.mobile-container {
+  max-width: 428px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Status bar simulation */
+.status-bar {
+  background: hsl(0, 0%, 7%);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* App header gradient */
+.app-header {
+  background: linear-gradient(135deg, var(--cyber-blue), hsl(213, 94%, 58%));
+}
+
+/* Navigation animations */
+.nav-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+}
+
+.nav-card:active {
+  transform: translateY(0);
+}
+
+/* Quiz option animations */
+.quiz-option {
+  transition: all 0.2s ease-in-out;
+}
+
+.quiz-option.correct {
+  background-color: hsl(158, 64%, 95%);
+  border-color: var(--cyber-green);
+  color: hsl(158, 64%, 30%);
+}
+
+.quiz-option.incorrect {
+  background-color: hsl(0, 84%, 95%);
+  border-color: hsl(0, 84%, 60%);
+  color: hsl(0, 84%, 40%);
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Touch feedback */
+.touch-feedback:active {
+  transform: scale(0.98);
+  opacity: 0.8;
+}
