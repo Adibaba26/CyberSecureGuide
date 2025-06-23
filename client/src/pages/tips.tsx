@@ -64,7 +64,7 @@ export default function Tips() {
         <Link href="/" className="mr-4 p-2 hover:bg-gray-100 rounded-lg touch-feedback">
           <ArrowLeft className="h-5 w-5 text-gray-600" />
         </Link>
-        <h2 className="text-xl font-bold text-gray-800">Cyber Safety Tips</h2>
+        <h2 className="text-xl font-bold text-foreground">Cyber Safety Tips</h2>
       </div>
 
       <div className="space-y-4">

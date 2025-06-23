@@ -31,7 +31,7 @@ export default function DesktopSidebar() {
             <i className="fas fa-shield-alt text-white text-lg"></i>
           </div>
           <div>
-            <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">CyberAware</h1>
+            <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">SecureLearn</h1>
             <p className="text-sm text-gray-500 dark:text-gray-400">Education Platform</p>
           </div>
         </div>

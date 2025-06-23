@@ -1,8 +1,8 @@
-# CyberAware - Cybersecurity Education Platform
+# SecureLearn - Cybersecurity Education Platform
 
 ## Overview
 
-CyberAware is a mobile-first educational platform designed to teach cybersecurity awareness to students through interactive lessons, quizzes, and resources. The application provides cyber safety tips, interactive quizzes, educational posters, and learning resources in an engaging, mobile-optimized interface.
+SecureLearn is a mobile-first educational platform designed to teach cybersecurity awareness to students through interactive lessons, quizzes, and resources. The application provides cyber safety tips, interactive quizzes, educational posters, and learning resources in an engaging, mobile-optimized interface.
 
 ## System Architecture
 
@@ -100,6 +100,9 @@ CyberAware is a mobile-first educational platform designed to teach cybersecurit
 - **Static Assets**: Client build output served from Express server
 
 ## Recent Changes
+- June 23, 2025: Rebranded application from CyberAware to SecureLearn
+- June 23, 2025: Added splash screen animation with logo on app load
+- June 23, 2025: Implemented logo shrink animation from fullscreen to header position
 - June 23, 2025: Added light/dark mode toggle with system preference detection
 - June 23, 2025: Implemented theme persistence using localStorage
 - June 23, 2025: Updated UI components to support dark mode styling

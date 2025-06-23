@@ -8,7 +8,7 @@ export default function Home() {
         <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
           <i className="fas fa-graduation-cap text-white text-4xl"></i>
         </div>
-        <h2 className="text-2xl font-bold text-foreground mb-4">Welcome to CyberAware</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-4">Welcome to SecureLearn</h2>
         <p className="text-muted-foreground mb-8">Learn to stay safe online with interactive lessons, quizzes, and resources.</p>
       </div>
 

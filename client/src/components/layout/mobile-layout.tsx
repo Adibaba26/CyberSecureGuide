@@ -48,7 +48,7 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
       {/* App Header */}
       <div className="app-header text-white p-4 pb-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold">CyberAware</h1>
+          <h1 className="text-xl font-bold">SecureLearn</h1>
           <div className="flex items-center space-x-2">
             <ThemeToggle />
             <i className="fas fa-shield-alt text-2xl"></i>
